@@ -2,6 +2,9 @@
     "recipes": [
         "aikigite_axe_recipe",
         "aikigite_block",
-        "aikigite_boots_recipe"
+        "aikigite_boots_recipe",
+        "aikigite_bow_craft",
+        "aikigite_chestplate_recipe",
+        "aikigite_from_block"
     ]
 }

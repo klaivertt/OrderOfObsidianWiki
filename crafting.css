@@ -5,11 +5,11 @@ body {
     margin: 0;
     padding: 0;
     color: #333;
-    background-color: #282c34; /* Midnight blue */
+    background-color: #282c34; /* Bleu nuit */
 }
 
 header {
-    background-color: #110022; /* Dark purple */
+    background-color: #110022; /* Violet foncé */
     color: #fff;
     text-align: center;
     padding: 10px;
@@ -21,7 +21,7 @@ header img {
 }
 
 nav {
-    background-color: #33035d; /* Darker purple */
+    background-color: #33035d; /* Violet plus foncé */
     color: #fff;
     padding: 5px;
     text-align: center;
@@ -52,7 +52,7 @@ main {
 }
 
 footer {
-    background-color: #110022; /* Dark purple */
+    background-color: #110022; /* Violet foncé */
     color: #fff;
     text-align: center;
     padding: 10px;
@@ -74,8 +74,8 @@ div {
     max-width: 800px;
     margin: 0 auto;
     padding: 20px;
-    background-color: #1a1a1a; /* Dark gray */
-    color: #f7f7f7; /* Light gray text */
+    background-color: #1a1a1a; /* Gris foncé */
+    color: #f7f7f7; /* Texte gris clair */
     border: 1px solid #333;
     border-radius: 5px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
@@ -87,17 +87,17 @@ h2 {
     font-size: 28px;
     font-weight: bold;
     margin-bottom: 20px;
-    color: #fff; /* White */
+    color: #fff; /* Blanc */
 }
 
 /* Style for the paragraphs */
 p {
-    color: #e5e5e5; /* Light gray */
+    color: #e5e5e5; /* Gris clair */
 }
 
 /* Style for the links */
 a {
-    color: #007bff; /* Blue */
+    color: #007bff; /* Bleu */
     text-decoration: none;
 }
 
@@ -107,9 +107,9 @@ a:hover {
 
 /* Style for the citations */
 blockquote {
-    border-left: 4px solid #007bff; /* Blue */
+    border-left: 4px solid #007bff; /* Bleu */
     padding-left: 10px;
-    color: #999; /* Gray */
+    color: #999; /* Gris */
     font-style: italic;
 }
 
@@ -118,7 +118,7 @@ button {
     font-family: 'Arial', sans-serif;
     font-size: 16px;
     padding: 10px 20px;
-    background-color: #33035d; /* Darker purple */
+    background-color: #33035d; /* Violet plus foncé */
     color: #fff;
     border: none;
     cursor: pointer;
@@ -126,7 +126,7 @@ button {
 }
 
 button:hover {
-    background-color: #551A8B; /* Dark purple on hover */
+    background-color: #551A8B; /* Violet foncé au survol */
 }
 
 /* Text transition effect */
@@ -149,26 +149,51 @@ div[lang="fr"].transition {
     grid-template-columns: repeat(3, 100px);
     grid-gap: 10px;
     margin-top: 30px;
-  }
-  
-  .slot {
+}
+
+.slot {
     width: 50px;
     height: 50px;
     border: 2px solid #000;
     cursor: pointer;
     background-size: 100% 100%; /* Pour que l'image prenne la taille du slot */
     image-rendering: pixelated;
-  }
-  
-  #result {
+}
+
+#result {
     margin-top: 30px;
     font-size: 18px;
     text-align: center;
-      margin-top: 20px;
-  }
+    margin-top: 20px;
+}
 
-  #resultImage {
+#resultImage {
     width: 160px;
     height: 160px;
     image-rendering: pixelated;
-  }
+}
+
+/* Style pour l'élément select */
+#recipeSelect {
+    font-family: 'Arial', sans-serif;
+    font-size: 16px;
+    padding: 10px;
+    background-color: #33035d; /* Violet plus foncé */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#recipeSelect option {
+    background-color: #3f1468; /* Violet foncé */
+    color: #fff;
+}
+
+#recipeSelect:hover {
+    background-color: #551A8B; /* Violet foncé au survol */
+}
+
+#recipeSelect:focus {
+    outline: none;
+}

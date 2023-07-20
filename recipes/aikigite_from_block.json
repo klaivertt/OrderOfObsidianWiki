@@ -1,12 +1,14 @@
 {
-  "type": "minecraft:crafting_shapeless",
-  "ingredients": [
-    {
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "1"
+  ],
+  "key": {
+    "1": {
       "item": "orderofobsidian:aikigite_block"
     }
-  ],
+  },
   "result": {
-    "item": "orderofobsidian:aikigite_ingot",
-    "count": 9
+    "item": "orderofobsidian:aikigite_ingot"
   }
 }

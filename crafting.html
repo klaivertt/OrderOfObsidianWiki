@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Order of Obsidian Wiki</title>
+    <!-- Lien vers le fichier CSS -->
+    <link rel="stylesheet" type="text/css" href="crafting.css">
+
+</head>
+<body>
+    <header>
+        <!-- Utilise la balise <img> pour afficher l'image -->
+        <img src="logo.png" alt="Order of Obsidian Logo">
+        <h1>Order of Obsidian Wiki</h1>
+    </header>
+
+    <nav>
+        <!-- Ajoute ici des liens vers différentes sections du wiki -->
+        <ul>
+            <li><a href="index.html">Introduction</a></li>
+            <li><a href="crafting.html">Crafting</a></li>
+            <li><a href="">Items Soon</a></li>
+            <li><a href="">Blocks Soon</a></li>
+            <!-- Ajoute d'autres liens vers des sections supplémentaires si nécessaire -->
+        </ul>
+    </nav>
+
+    <main>
+        <button onclick="toggleLanguage()">Passer en Anglais</button>
+        <select id="recipeSelect" onchange="loadSelectedRecipe()">
+            <!-- Les options seront ajoutées dynamiquement par JavaScript -->
+        </select>
+        <!-- Contenu principal du wiki sera ajouté ici -->
+        <div lang="en">
+            <h2>Craft you've chosen:</h2>
+        </div>
+        <div lang="fr">
+            <h2>Craft que vous avez choisit:</h2>
+        </div>
+       
+        <div class="grid-container">
+            <div class="slot"></div>
+            <div class="slot"></div>
+            <div class="slot"></div>
+            <div class="slot"></div>
+            <div class="slot"></div>
+            <div class="slot"></div>
+            <div class="slot"></div>
+            <div class="slot"></div>
+            <div class="slot"></div>
+          
+        </div>
+        <div id="result">
+            <h2>Résultat :</h2>
+            <img id="resultImage" src="" alt="Résultat du craft">
+          </div>
+        
+        
+    </main>
+
+    <footer>
+        <!-- Pied de page avec des informations supplémentaires -->
+        <p>Order of Obsidian Wiki</p>
+    </footer>
+    <script>
+        const slots = document.getElementsByClassName('slot');
+        const items = Array(9).fill(null);
+        let pattern = [];
+
+        function addItem(slotNumber) {
+            // Placeholder for item selection logic.
+            // Implement your own logic here to select an item for the slot.
+            // For example, you could show a modal or a list of available items to choose from.
+
+            // For this example, we'll simply add a predefined item to the slot.
+            const item = 'Item ' + slotNumber;
+            items[slotNumber] = item;
+            updateDisplay();
+        }
+
+        function updateDisplay() {
+            const resultDiv = document.getElementById('result');
+            resultDiv.innerHTML = '';
+
+            // Display the items in the grid based on the custom pattern
+            for (let i = 0; i < pattern.length; i++) {
+                for (let j = 0; j < pattern[i].length; j++) {
+                    const slotChar = pattern[i][j];
+                    if (slotChar === '&') continue; // Skip empty slots indicated by '&'
+
+                    const slotNumber = parseInt(slotChar);
+                    const itemData = items[slotNumber];
+
+                    if (itemData !== null) {
+                        const itemImage = 'images/' + itemData.replace('Item ', '').replace(':', '/') + '.png';
+                        const slotDiv = slots[i * 3 + j];
+                        slotDiv.style.backgroundImage = `url(${itemImage})`;
+                    } else {
+                        // If the itemData is null, it means the slot is empty, so we set the background to none.
+                        const slotDiv = slots[i * 3 + j];
+                        slotDiv.style.backgroundImage = 'none';
+                    }
+                }
+            }
+
+            // Update the result image with the crafted item (slot 9)
+            const resultItem = items[8];
+            const resultImage = resultItem !== null ? 'images/' + resultItem.replace('Item ', '').replace(':', '/') + '.png' : '';
+            const resultImg = document.getElementById('resultImage');
+            resultImg.src = resultImage;
+        }
+
+        function loadSelectedRecipe() {
+            var selectElement = document.getElementById('recipeSelect');
+            var selectedRecipe = selectElement.value;
+            loadRecipe(selectedRecipe);
+        }
+
+        function loadRecipe(recipeName) {
+            // Réinitialiser les slots en vidant l'array items et en effaçant les images des slots
+            items.fill(null);
+            for (const slot of slots) {
+                slot.style.backgroundImage = 'none';
+            }
+
+            fetch('recipes/' + recipeName + '.json')
+                .then(response => response.json())
+                .then(data => {
+                    pattern = data.pattern;
+                    const key = data.key;
+
+                    // Update the slots in the grid with the corresponding images
+                    for (let i = 0; i < pattern.length; i++) {
+                        for (let j = 0; j < pattern[i].length; j++) {
+                            const slotChar = pattern[i][j];
+                            if (slotChar === '&') continue; // Skip empty slots indicated by '&'
+
+                            const slotNumber = parseInt(slotChar);
+                            const itemData = key[slotNumber];
+                            const itemImage = 'images/' + itemData.item.replace(':', '/') + '.png';
+                            const slotDiv = slots[i * 3 + j];
+                            slotDiv.style.backgroundImage = `url(${itemImage})`;
+                        }
+                    }
+
+                    // Update the result image with the crafted item
+                    const resultItem = data.result.item;
+                    const resultImage = 'images/' + resultItem.replace(':', '/') + '.png';
+                    const resultImg = document.getElementById('resultImage');
+                    resultImg.src = resultImage;
+                })
+                .catch(error => console.error('Error loading recipe:', error));
+        }
+
+        function fetchRecipesList() {
+            fetch('recipes_list.json')
+                .then(response => response.json())
+                .then(data => {
+                    const recipeSelect = document.getElementById('recipeSelect');
+                    data.recipes.forEach(recipeName => {
+                        const option = document.createElement('option');
+                        option.value = recipeName;
+                        option.textContent = recipeName;
+                        recipeSelect.appendChild(option);
+                    });
+                    // Load the first recipe by default
+                    if (data.recipes.length > 0) {
+                        loadRecipe(data.recipes[0]);
+                    }
+                })
+                .catch(error => console.error('Error fetching recipes list:', error));
+        }
+
+        fetchRecipesList();
+
+        function toggleLanguage() {
+            var frDiv = document.querySelector('div[lang="fr"]');
+            var enDiv = document.querySelector('div[lang="en"]');
+            var button = document.querySelector('button');
+
+            if (frDiv.style.display === 'none') {
+                frDiv.style.display = 'block';
+                enDiv.style.display = 'none';
+                button.textContent = 'Passer en Anglais';
+            } else {
+                frDiv.style.display = 'none';
+                enDiv.style.display = 'block';
+                button.textContent = 'Switch to English';
+            }
+        }
+    </script>
+</body>
+</html>

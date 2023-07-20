@@ -1,0 +1,174 @@
+/* General styles */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    background-color: #282c34; /* Midnight blue */
+}
+
+header {
+    background-color: #110022; /* Dark purple */
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+}
+
+header img {
+    max-width: 80%;
+    height: auto;
+}
+
+nav {
+    background-color: #33035d; /* Darker purple */
+    color: #fff;
+    padding: 5px;
+    text-align: center;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav li {
+    display: inline;
+    margin-right: 10px;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+main {
+    padding: 20px;
+}
+
+footer {
+    background-color: #110022; /* Dark purple */
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+}
+
+/* Style for the lore sections */
+div[lang="fr"] {
+    display: block;
+}
+
+div[lang="en"] {
+    display: none;
+}
+
+div {
+    font-family: "Arial", sans-serif;
+    font-size: 18px;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #1a1a1a; /* Dark gray */
+    color: #f7f7f7; /* Light gray text */
+    border: 1px solid #333;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Style for the titles */
+h2 {
+    font-family: "Georgia", serif;
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #fff; /* White */
+}
+
+/* Style for the paragraphs */
+p {
+    color: #e5e5e5; /* Light gray */
+}
+
+/* Style for the links */
+a {
+    color: #007bff; /* Blue */
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Style for the citations */
+blockquote {
+    border-left: 4px solid #007bff; /* Blue */
+    padding-left: 10px;
+    color: #999; /* Gray */
+    font-style: italic;
+}
+
+/* Style for the button to toggle languages */
+button {
+    font-family: 'Arial', sans-serif;
+    font-size: 16px;
+    padding: 10px 20px;
+    background-color: #33035d; /* Darker purple */
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #551A8B; /* Dark purple on hover */
+}
+
+/* Text transition effect */
+div[lang="en"].transition,
+div[lang="fr"].transition {
+    animation: fade 1s;
+}
+
+@keyframes fade {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-gap: 10px;
+    margin-top: 30px;
+  }
+  
+  .slot {
+    width: 50px;
+    height: 50px;
+    border: 2px solid #000;
+    cursor: pointer;
+    background-size: 100% 100%; /* Pour que l'image prenne la taille du slot */
+    image-rendering: pixelated;
+  }
+  
+  #result {
+    margin-top: 30px;
+    font-size: 18px;
+    text-align: center;
+      margin-top: 20px;
+  }
+
+  #resultImage {
+    width: 160px;
+    height: 160px;
+    image-rendering: pixelated;
+  }

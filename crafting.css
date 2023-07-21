@@ -9,10 +9,12 @@ body {
 }
 
 header {
-    background-color: #110022; /* Violet foncé */
+    background-color: #110022; /* Dark purple */
     color: #fff;
     text-align: center;
-    padding: 10px;
+    padding: 1.5%; /* Ajustement de la valeur en pourcentage */
+    z-index: 2; /* Setting a higher z-index to bring it above the main content */
+    transition: padding 0.5s, position 0.5s, top 0.5s;
 }
 
 header img {
@@ -20,11 +22,46 @@ header img {
     height: auto;
 }
 
+/* Style pour le header lorsque décollé */
+header.scrolled {
+    padding: 0.5%; /* Ajustement de la valeur en pourcentage */
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 20%; /* Ajustement de la valeur en pourcentage */
+}
+
+header h1 {
+    margin: 0; /* Enlever les marges pour éviter un espace vide dans le header */
+    display: inline-block; /* Ajout de display: inline-block pour que le texte occupe l'espace minimum */
+    opacity: 1; /* Par défaut, le titre est visible */
+    transition: opacity 0.3s; /* Ajout de la transition pour une animation fluide */
+}
+
+/* Style pour le titre h1 dans le header lorsque décollé */
+header.scrolled h1 {
+    opacity: 0; /* Lorsque le header est décollé, le titre devient invisible */
+}
+
 nav {
-    background-color: #33035d; /* Violet plus foncé */
+    background-color: #33035d; /* Darker purple */
     color: #fff;
-    padding: 5px;
+    padding: 1.5%; /* Ajustement de la valeur en pourcentage */
     text-align: center;
+    position: relative;
+    z-index: 2;
+    transition: padding 1s,top 1s, position 1s, height 1s; /* Ajout de la transition pour une animation fluide */
+}
+
+/* Style pour la nav bar lorsque décollée */
+nav.scrolled {
+    padding: 0.5%; /* Ajustement de la valeur en pourcentage */
+    position: fixed;
+    top: 20%; /* Ajustement de la valeur en pourcentage */
+    left: 0;
+    right: 0;
+    height: 5%; /* Ajustement de la valeur en pourcentage */
 }
 
 nav ul {
@@ -35,7 +72,7 @@ nav ul {
 
 nav li {
     display: inline;
-    margin-right: 10px;
+    margin-right: 1.5%; /* Ajustement de la valeur en pourcentage */
 }
 
 nav a {
@@ -48,14 +85,28 @@ nav a:hover {
 }
 
 main {
-    padding: 20px;
+    padding: 2%;
 }
 
 footer {
-    background-color: #110022; /* Violet foncé */
+    background-color: #110022; /* Dark purple */
     color: #fff;
     text-align: center;
-    padding: 10px;
+    padding: 1.5%;
+    position: relative; /* Adding position to the footer */
+    z-index: 2; /* Setting a higher z-index to bring it above the main content */
+    transition: padding 1.5s, position 1.5s, top 1.5s;
+}
+
+/* Style for the footer when detached */
+footer.scrolled {
+    padding: 1.5%; /* Ajustement de la valeur en pourcentage */
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    font-size: 0.5hv;
+    height: 3vh; /* Ajustement de la valeur en pourcentage */
 }
 
 /* Style for the lore sections */
@@ -69,12 +120,12 @@ div[lang="en"] {
 
 div {
     font-family: "Arial", sans-serif;
-    font-size: 18px;
+    font-size: 1.8vw; /* Ajustement de la valeur en pourcentage */
     line-height: 1.6;
     max-width: 800px;
     margin: 0 auto;
-    padding: 20px;
-    background-color: #1a1a1a; /* Gris foncé */
+    padding: 2%; /* Ajustement de la valeur en pourcentage */
+    background-color: #1f1f1f; /* Gris foncé */
     color: #f7f7f7; /* Texte gris clair */
     border: 1px solid #333;
     border-radius: 5px;
@@ -84,9 +135,9 @@ div {
 /* Style for the titles */
 h2 {
     font-family: "Georgia", serif;
-    font-size: 28px;
+    font-size: 2.8vw; /* Ajustement de la valeur en pourcentage */
     font-weight: bold;
-    margin-bottom: 20px;
+    margin-bottom: 2%; /* Ajustement de la valeur en pourcentage */
     color: #fff; /* Blanc */
 }
 
@@ -107,8 +158,8 @@ a:hover {
 
 /* Style for the citations */
 blockquote {
-    border-left: 4px solid #007bff; /* Bleu */
-    padding-left: 10px;
+    border-left: 0.4vw solid #007bff; /* Ajustement de la valeur en pourcentage */
+    padding-left: 2%; /* Ajustement de la valeur en pourcentage */
     color: #999; /* Gris */
     font-style: italic;
 }
@@ -116,8 +167,8 @@ blockquote {
 /* Style for the button to toggle languages */
 button {
     font-family: 'Arial', sans-serif;
-    font-size: 16px;
-    padding: 10px 20px;
+    font-size: 1.6vw; /* Ajustement de la valeur en pourcentage */
+    padding: 1% 2%; /* Ajustement de la valeur en pourcentage */
     background-color: #33035d; /* Violet plus foncé */
     color: #fff;
     border: none;
@@ -146,14 +197,14 @@ div[lang="fr"].transition {
 
 .grid-container {
     display: grid;
-    grid-template-columns: repeat(3, 100px);
+    grid-template-columns: repeat(3, 110px);
     grid-gap: 10px;
     margin-top: 30px;
 }
 
 .slot {
-    width: 50px;
-    height: 50px;
+    width: 100px;
+    height: 100px;
     border: 2px solid #000;
     cursor: pointer;
     background-size: 100% 100%; /* Pour que l'image prenne la taille du slot */
@@ -161,23 +212,23 @@ div[lang="fr"].transition {
 }
 
 #result {
-    margin-top: 30px;
-    font-size: 18px;
+    margin-top: 3%; /* Ajustement de la valeur en pourcentage */
+    font-size: 1.8vw; /* Ajustement de la valeur en pourcentage */
     text-align: center;
-    margin-top: 20px;
+    margin-top: 2%; /* Ajustement de la valeur en pourcentage */
 }
 
 #resultImage {
-    width: 160px;
-    height: 160px;
+    width: 16%; /* Ajustement de la valeur en pourcentage */
+    height: 16%; /* Ajustement de la valeur en pourcentage */
     image-rendering: pixelated;
 }
 
 /* Style pour l'élément select */
 #recipeSelect {
     font-family: 'Arial', sans-serif;
-    font-size: 16px;
-    padding: 10px;
+    font-size: 1.6vw; /* Ajustement de la valeur en pourcentage */
+    padding: 1% 2%; /* Ajustement de la valeur en pourcentage */
     background-color: #33035d; /* Violet plus foncé */
     color: #fff;
     border: none;
@@ -196,4 +247,4 @@ div[lang="fr"].transition {
 
 #recipeSelect:focus {
     outline: none;
-}
+} 

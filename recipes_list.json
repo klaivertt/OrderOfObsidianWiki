@@ -5,6 +5,27 @@
         "aikigite_boots_recipe",
         "aikigite_bow_craft",
         "aikigite_chestplate_recipe",
-        "aikigite_from_block"
+        "aikigite_from_block",
+        "aikigite_helmet_recipe",
+        "aikigite_leggings_recipe",
+        "aikigite_pickaxe_recipe",
+        "aikigite_shovel_recipe",
+        "aikigite_sword_recipe",
+        "aluminium_block",
+        "aluminium_from_block",
+        "aluminium_platecraft",
+        "aluminum_boots_recipe",
+        "aluminum_chestplate_recipe",
+        "aluminum_helmet_recipe",
+        "aluminum_leggings_recipe",
+        "avenronite_axe_recipe",
+        "avenronite_block",
+        "avenronite_boots_recipe",
+        "avenronite_bow_craft",
+        "avenronite_chestplate_recipe",
+        "avenronite_from_block",
+        "avenronite_helmet_recipe",
+        "avenronite_hoe_recipe",
+        "oxys_block"
     ]
 }

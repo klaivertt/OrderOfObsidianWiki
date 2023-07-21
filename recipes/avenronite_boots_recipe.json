@@ -1,26 +1,25 @@
 {
   "type": "minecraft:crafting_shaped",
   "pattern": [
-    "01",
-    "&3",
-    "&5"
+    "0&2",
+    "3&5"
   ],
   "key": {
     "0": {
       "item": "orderofobsidian:avenronite_ingot"
     },
-    "1": {
+    "2": {
       "item": "orderofobsidian:avenronite_ingot"
     },
     "3": {
-      "item": "minecraft:stick"
+      "item": "orderofobsidian:avenronite_ingot"
     },
     "5": {
-      "item": "minecraft:stick"
+      "item": "orderofobsidian:avenronite_ingot"
     }
   },
   "result": {
-    "item": "orderofobsidian:avenronite_hoe",
+    "item": "orderofobsidian:avenronite_boots",
     "count": 1
   }
 }

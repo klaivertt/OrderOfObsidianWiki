@@ -2,8 +2,8 @@
   "type": "minecraft:crafting_shaped",
   "pattern": [
     "01",
-    " 3",
-    " 5"
+    "&3",
+    "&5"
   ],
   "key": {
     "0": {

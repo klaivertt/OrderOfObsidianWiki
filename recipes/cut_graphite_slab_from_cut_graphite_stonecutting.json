@@ -1,8 +1,14 @@
 {
-  "type": "minecraft:stonecutting",
-  "count": 2,
-  "ingredient": {
-    "item": "orderofobsidian:cut_graphite"
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "111"
+  ],
+  "key": {
+    "1": {
+      "item": "orderofobsidian:graphite_block"
+    }
   },
-  "result": "orderofobsidian:cut_graphite_slab"
+  "result": {
+    "item": "orderofobsidian:cut_graphite_slab"
+  }
 }

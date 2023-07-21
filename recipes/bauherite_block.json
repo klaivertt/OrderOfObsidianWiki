@@ -1,13 +1,13 @@
 {
   "type": "minecraft:crafting_shaped",
   "pattern": [
-    "###",
-    "###",
-    "###"
+    "111",
+    "111",
+    "111"
   ],
   "key": {
-    "#": {
-      "tag": "forge:ingot/bauherite"
+    "1": {
+      "item": "orderofobsidian:bauherite_ingot"
     }
   },
   "result": {

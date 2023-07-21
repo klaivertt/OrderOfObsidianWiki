@@ -1,13 +1,14 @@
+
 {
   "type": "minecraft:crafting_shaped",
   "pattern": [
-    "###",
-    "###",
-    "###"
+    "111",
+    "111",
+    "111"
   ],
   "key": {
-    "#": {
-      "tag": "forge:raw/aikigite"
+    "1": {
+      "item": "orderofobsidian:raw_aikigite"
     }
   },
   "result": {

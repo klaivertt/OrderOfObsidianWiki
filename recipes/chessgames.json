@@ -2,7 +2,7 @@
   "type": "minecraft:crafting_shaped",
   "pattern": [
     "012",
-    " 4 "
+    "&4&"
   ],
   "key": {
     "0": {
@@ -15,7 +15,7 @@
       "item": "minecraft:white_dye"
     },
     "4": {
-      "tag": "minecraft:wooden_slabs"
+      "item": "minecraft:wooden_slabs"
     }
   },
   "result": {
